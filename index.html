@@ -16,7 +16,7 @@
     </div>
     <h2 id="title">Electric Chill Machine</h2>
     <h3 id="artist">Jacinto</h3>
-    <audio src="music/jacinto-1.mp3"></audio>
+    <audio id="audio-element" src="music/jacinto-1.mp3"></audio>
     <!-- Progressbar -->
     <div class="progress-container" id="progress-container">
       <div class="progress" id="progress"></div>
@@ -27,9 +27,9 @@
     </div>
     <!-- Controls -->
     <div class="player-controls">
-      <i class="fas fa-backward" id="prev" title="Previous"></i>
-      <i class="fas fa-play main-button" id="play" title="Play"></i>
-      <i class="fas fa-forward" id="next" title="Next"></i>
+      <button class="player-button" type="button"><i class="fas fa-backward" id="prev" title="Previous"></i></button>
+      <button class="player-button" type="button"><i class="fas fa-play main-button" id="play-pause" title="Play"></i></button>
+      <button class="player-button" type="button"><i class="fas fa-forward" id="next" title="Next"></i></button>
     </div>
   </div>
   <!-- Script -->
