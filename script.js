@@ -101,9 +101,18 @@ const updateProgressBar = (evt) => {
   }
 }
 
+const setProgressBar = (evt) => {
+  const barWidth = evt.srcElement.clientWidth;
+  const clickTarget = evt.offsetX;
+  const {duration} = audioElement;
+  audioElement.currentTime = (clickTarget / barWidth) * duration;
+}
+
 loadSong(songs[songIndex]);
 
 playPauseBytton.addEventListener('click', () => isPlaying ? pauseAudio() : playAudio());
 prevButton.addEventListener('click', playPrevAudio);
 nextButton.addEventListener('click', playNextAudio);
 audioElement.addEventListener('timeupdate', updateProgressBar)
+progressContainer.addEventListener('click', setProgressBar);
+audioElement.addEventListener('ended', playNextAudio)
